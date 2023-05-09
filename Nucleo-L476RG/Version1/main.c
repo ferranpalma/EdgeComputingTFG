@@ -25,7 +25,6 @@
 #include <math.h>
 #include <stdlib.h>
 #include <stdbool.h> // Header-file for boolean data-type.
-#include "arm_math.h"
 
 /* USER CODE END Includes */
 
