@@ -164,11 +164,11 @@ int main(void)
 		// normalize data
 		arm_scale_f32(FFT_Mag, 1.0f / sqrtf((float) BUFFER_SIZE), FFT_Mag, BUFFER_SIZE / 2);
 
-		for(i = 0; i < BUFFER_SIZE; i++){
+		for(i = 0; i < BUFFER_SIZE/2 ; i++){
 			processed_buff[i] = (uint16_t)round(FFT_Mag[i]);
 		}
 
-		for(i=0; i<BUFFER_SIZE;i++){
+		for(i=0; i<BUFFER_SIZE/2 ; i++){
 			for(j=0; j<2; j++){
 				sender_buffer[i*2 + j] = (j==0 ? (processed_buff[i] >> 8) : (uint8_t)processed_buff[i]);
 			}
